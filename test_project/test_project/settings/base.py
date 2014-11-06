@@ -203,6 +203,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Some of our own apps
+    'django_extensions'
 )
 
 CORE_MIDDLEWARE_CLASSES = (
