@@ -1,4 +1,3 @@
-
 Look at the "example_settings" file. It contains a number of settings, which
 need to be passed to Django via environment variables.
 
