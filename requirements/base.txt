@@ -3,4 +3,4 @@ argparse==1.2.1
 wsgiref==0.1.2
 requests==1.2.3
 django-extensions
-
+psycopg2==2.5.1
