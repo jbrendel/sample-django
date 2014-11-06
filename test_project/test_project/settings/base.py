@@ -230,25 +230,6 @@ ROOT_URLCONF = 'test_project.urls'
 WSGI_APPLICATION = 'test_project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE'      : 'django.db.backends.postgresql_psycopg2',
-#        'NAME'        : "test_project_db",
-#        'USER'        : "test_db_user",
-#        'PASSWORD'    : "this is the password",
-#        'HOST'        : "localhost",
-#        'PORT'        : '',
-#        'TEST_NAME'   : "test_project_test_db"
-#    }
-#}
-
-
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
