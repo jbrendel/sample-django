@@ -5,6 +5,10 @@ Settings file for deployment run of server.
 
 from .base import *
 
+DEBUG = True   # <----- Needs to be set to False for real deployment, need
+               #        to fix the ALLOWED_HOSTS settings before we can do
+               #        this.
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CORP_SITE_DOMAIN = SITE_DOMAIN = get_env_variable("DJANGO_SERVER_DNS")
