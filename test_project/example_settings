@@ -1,0 +1,28 @@
+#
+# Many of the important settings are passed to Django via environment
+# variables. Source this file before 'python manage.py runserver...' Adjust as
+# needed to any local test settings. Since you don't want to check this in all
+# the time (with your real values no less), just make a copy that is not under
+# version control and which you can edit.
+#
+# There are three different settings files: local, test and deploy.  Here, we
+# should define 'local', since that is used when you are testing your server
+# locally on your development machine. For the running of unit tests, you
+# should use the 'test' settings file.
+
+export DJANGO_SETTINGS_MODULE="test_project.settings.local"
+export DJANGO_SECRET_KEY="vn980jm98n37t87fchjdgvfchf09nm84thgb7"
+export DJANGO_DB_PASSWORD="this is the password"
+export DJANGO_DB_NAME="test_project_db"
+export DJANGO_DB_USER="test_db_user"
+export DJANGO_DB_HOST="localhost"
+export DJANGO_TEST_DB="test_project_test_db"
+
+# Needed when the 'deploy' settings file is used. But these values are set by
+# the deployment automation scripts. Just listed here for completenss sake.
+
+export DJANGO_SERVER_DNS=""
+export DJANGO_SERVER_PORT=""
+export DJANGO_SERVER_SCHEMA=""
+
+
