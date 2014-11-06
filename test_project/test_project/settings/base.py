@@ -265,7 +265,7 @@ STATIC_URL = '/m/'
 # can map the entire URL into the STATIC_ROOT directory, we don't have to strip off the
 # STATIC_URL prefix.
 #
-STATIC_ROOT = 'STATIC_ROOT' + STATIC_URL
+STATIC_ROOT = '/var/tmp/test_project_static' + STATIC_URL
 
 # Additional locations of static files
 STATICFILES_DIRS = (
