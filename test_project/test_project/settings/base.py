@@ -202,7 +202,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     # Some of our own apps
     'django_extensions'
 )
@@ -234,6 +234,56 @@ WSGI_APPLICATION = 'test_project.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#
+# --------------------------------------------------------------
+# Directory locations and URLs for media and static files
+# --------------------------------------------------------------
+#
+
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = BASE_DIR+"static/uploaded/"
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = '/m/up/'
+
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/m/'
+
+# Absolute path to the directory static files should be collected to.  Don't put
+# anything in this directory yourself; store your static files in apps' "static/"
+# subdirectories and in STATICFILES_DIRS.  Example:
+# "/home/media/media.lawrence.com/static/"
+#
+# We append the STATIC_URL that appears as prefix for all static files in the URL,
+# since it simplifies the serving of the static files (for example via uwsgi). The
+# server just needs to check whether the request is for a static resource. If so, it
+# can map the entire URL into the STATIC_ROOT directory, we don't have to strip off the
+# STATIC_URL prefix.
+#
+STATIC_ROOT = 'STATIC_ROOT' + STATIC_URL
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    BASE_DIR+"/static/",
+    #BASE_DIR+"/static_thirdparty/bootstrap_2.2.2/",
+    #BASE_DIR+"/static_thirdparty/misc/",
+)
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 
 #
