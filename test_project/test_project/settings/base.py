@@ -125,8 +125,6 @@ SECRET_KEY = get_env_variable("DJANGO_SECRET_KEY")
 WSGI_APPLICATION = 'zzyyxx.wsgi.application'
 
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.twitter.TwitterBackend',
     'accounts.authentication.AuthBackend',
 )
 
@@ -190,8 +188,8 @@ LOCALE_PATHS = (
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG          = False
-TEMPLATE_DEBUG = False
+DEBUG          = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -204,7 +202,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Some of our own apps
-    'django_extensions'
+    'django_extensions',
+    'dbtest'
 )
 
 CORE_MIDDLEWARE_CLASSES = (
