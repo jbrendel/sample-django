@@ -6,7 +6,7 @@ from django.test import TestCase
 
 from .models     import FileStorage
 
-TOTAL_FILES = 1000
+TOTAL_FILES = 50
 
 FILE_SIZE_SPECS = [
     dict(size=1000,    num_files=TOTAL_FILES/2 + TOTAL_FILES/16),
@@ -66,10 +66,10 @@ class PerformanceTest(TestCase):
             total_time = t2-t1
             total_len_mb = total_len/(1024*1024)
             total_write_len_mb = total_write_bytes/(1024*1024)
-            print ("@@@ %d reads, total read chars: %.2f MB,"
+            print ("@@@ %d reads, reads/s: %.2f, total read chars: %.2f MB,"
                    " writes: %d, total written chars: %.2f MB,"
                    " total time: %f, average speed: %.2f MB/s" %
-                   (read_chunk, total_len_mb,
+                   (read_chunk, read_chunk/total_time, total_len_mb,
                     total_writes, total_write_len_mb,
                     total_time, (total_len_mb / total_time)))
 
